@@ -10,7 +10,7 @@ in New York, Chicago and Washington
 
 ### Files used
 Three csv files with data on the three cities are needed for the program to run.
-This is in addition to the bikeshare.py python file included in this repository.
+This is in addition to the `bikeshare.py` python file included in this repository.
 
 ### Credits
 Special thanks to the exceptionally detailed pandas [docs](https://pandas.pydata.org/docs/).
