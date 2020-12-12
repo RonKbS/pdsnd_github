@@ -5,7 +5,8 @@
 BIKESHARE ANALYSIS
 
 ### Description
-Describe what your project is about and what it does
+This project creates an interactive shell program to display different stats about bike sharing
+in New York, Chicago and Washington
 
 ### Files used
 Include the files used
