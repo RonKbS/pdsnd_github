@@ -9,7 +9,8 @@ This project creates an interactive shell program to display different stats abo
 in New York, Chicago and Washington
 
 ### Files used
-Include the files used
+Three csv files with data on the three cities are needed for the program to run.
+This is in addition to the bikeshare.py python file included in this repository.
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
