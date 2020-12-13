@@ -154,8 +154,8 @@ def trip_duration_stats(df):
     # TO DO: display total travel time
     total_travel_time = df['Trip Duration'].sum()
     # total travel time in days
-    tt_day_time = total_travel_time / (60*60*24)
-    tt_day_time = round_fn(tt_day_time, 60*60*24)
+    tt_day_time = total_travel_time / 86400
+    tt_day_time = round_fn(tt_day_time, 86400)
     print(
         "\nThe total travel time is {0} seconds which is approximately {1} days".format(
             total_travel_time, tt_day_time
