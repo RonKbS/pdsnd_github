@@ -132,10 +132,12 @@ def station_stats(df):
 
     # TO DO: display most frequent combination of start station and end station trip
     """'Jefferson Dr & 14th St SW', 'Jefferson Dr & 14th St SW'"""
-    start_end_station = df.groupby(['Start Station', 'End Station']).size().idxmax()
+    stations = df.groupby(['Start Station', 'End Station']).size().idxmax()
+    start_station = stations[0]
+    end_station = stations[1]
     print(
         "\nThe most frequent combination of start and end station trip is;\n {0} and {1}\n".format(
-            start_end_station[0], start_end_station[1]
+            start_station, end_station
         )
     )
 
@@ -154,8 +156,8 @@ def trip_duration_stats(df):
     # TO DO: display total travel time
     total_travel_time = df['Trip Duration'].sum()
     # total travel time in days
-    tt_day_time = total_travel_time / (60*60*24)
-    tt_day_time = round_fn(tt_day_time, 60*60*24)
+    tt_day_time = total_travel_time / 86400
+    tt_day_time = round_fn(tt_day_time, 86400)
     print(
         "\nThe total travel time is {0} seconds which is approximately {1} days".format(
             total_travel_time, tt_day_time
@@ -208,10 +210,10 @@ def user_stats(df):
     try:
         earliest_birth_yr = int(df['Birth Year'].sort_values().iloc[0])
         recent_birth_yr = int(df['Birth Year'].sort_values(ascending=False).iloc[0])
-        commonest_birth_yr = int(df['Birth Year'].mode()[0])
+        most_common_yr = int(df['Birth Year'].mode()[0])
         print(
             "\n{}, {} and {} are the earliest, most recent and most common years of birth respectively".format(
-                earliest_birth_yr, recent_birth_yr, commonest_birth_yr
+                earliest_birth_yr, recent_birth_yr, most_common_yr
             )
         )
     except KeyError:
