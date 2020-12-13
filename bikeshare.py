@@ -210,10 +210,10 @@ def user_stats(df):
     try:
         earliest_birth_yr = int(df['Birth Year'].sort_values().iloc[0])
         recent_birth_yr = int(df['Birth Year'].sort_values(ascending=False).iloc[0])
-        commonest_birth_yr = int(df['Birth Year'].mode()[0])
+        most_common_yr = int(df['Birth Year'].mode()[0])
         print(
             "\n{}, {} and {} are the earliest, most recent and most common years of birth respectively".format(
-                earliest_birth_yr, recent_birth_yr, commonest_birth_yr
+                earliest_birth_yr, recent_birth_yr, most_common_yr
             )
         )
     except KeyError:
