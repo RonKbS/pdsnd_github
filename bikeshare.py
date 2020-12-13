@@ -132,10 +132,12 @@ def station_stats(df):
 
     # TO DO: display most frequent combination of start station and end station trip
     """'Jefferson Dr & 14th St SW', 'Jefferson Dr & 14th St SW'"""
-    start_end_station = df.groupby(['Start Station', 'End Station']).size().idxmax()
+    stations = df.groupby(['Start Station', 'End Station']).size().idxmax()
+    start_station = stations[0]
+    end_station = stations[1]
     print(
         "\nThe most frequent combination of start and end station trip is;\n {0} and {1}\n".format(
-            start_end_station[0], start_end_station[1]
+            start_station, end_station
         )
     )
 
